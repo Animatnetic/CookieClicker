@@ -16,7 +16,12 @@ struct ContentView: View {
                 print("You have eaten a cookie")
             } label: {
                 Text("Eat me")
-            }.buttonStyle(.borderedProminent)
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(.blue)
+                    .cornerRadius(10)
+            }
+            .shadow(color: .black, radius:10)
         }
     }
         
