@@ -12,12 +12,14 @@ struct ContentView: View {
         VStack {
             Text("0 cookies eaten")
             
-            Button("OM NOM!"){
+            Button {
                 print("You have eaten a cookie")
-            }
+            } label: {
+                Text("Eat me")
+            }.buttonStyle(.borderedProminent)
         }
     }
-    
+        
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
