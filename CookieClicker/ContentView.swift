@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var counter = 0
-    @State private var message = ""
-    @State private var cookiesInventory = 40 // We have
+    @AppStorage("count") private var counter = 0
+    @AppStorage("message") private var message = ""
+    @AppStorage("cookiesRemaining") private var cookiesInventory = 40 // We have
     
     var body: some View {
         VStack {
             Spacer()
             
             Text("\(counter) cookies eaten")
+                .font(.system(size: 20))
+                .fontWeight(.heavy)
             Text("\(cookiesInventory) cookies remaining")
             
             Button {
@@ -34,6 +36,7 @@ struct ContentView: View {
             } label: {
                 Text("Eat me")
                     .padding()
+                    .font(.largeTitle)
                     .foregroundColor(.white)
                     .background(.blue)
                     .cornerRadius(10)
